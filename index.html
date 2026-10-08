@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RetroPhone — press start</title>
+  <meta name="description" content="RetroPhone is a retro pixel launcher for Android: 16 operating-system eras, game cartridges, tiny games, dot-matrix clocks and secret codes to find.">
+  <meta property="og:title" content="RetroPhone — press start">
+  <meta property="og:description" content="A retro pixel launcher for Android. 16 OS eras, game cartridges, tiny games — and secret codes.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#a3ac8b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%23a3ac8b'/%3E%3Cpath fill='%231f2619' d='M2 1h4v1H2zM1 2h1v4H1zM6 2h1v4H6zM2 6h4v1H2zM3 3h1v1H3zM4 4h1v1H4z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="./" aria-label="RetroPhone home">
+    <svg class="brand-mark" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect width="8" height="8" fill="var(--ink)"/><path fill="var(--bg)" d="M2 1h4v1H2zM2 2h1v1H2zM5 2h1v1H5zM2 3h4v1H2zM2 5h1v1H2zM4 5h1v1H4zM2 6h4v1H2z"/></svg>
+    RetroPhone
+  </a>
+  <nav aria-label="Main">
+    <a href="#features">Features</a>
+    <a href="#packs">OS packs</a>
+    <a href="#modes">Modes</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="label">Android launcher · free to download</p>
+      <h1>Press start.</h1>
+      <p class="lede">Sixteen eras, game cartridges on your home screen and old service codes that still work. RetroPhone turns your Android into the pixel handheld you grew up with.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.retrophone.launcher">Get it on Google Play</a>
+        <a class="btn" href="#features">Press start</a>
+      </div>
+      <p class="label">Try a pack on this page:</p>
+      <div class="packs" role="group" aria-label="Preview an OS pack">
+        <button class="chip" data-pack="lcd" aria-pressed="true">Retro OS</button>
+        <button class="chip" data-pack="brick">Brick OS</button>
+        <button class="chip" data-pack="amber">Amber Term</button>
+        <button class="chip" data-pack="neo">Neo 2045</button>
+        <button class="chip" data-pack="space">Deep Space</button>
+      </div>
+    </div>
+
+    <div class="phone" aria-label="RetroPhone home screen preview">
+      <div class="phone-top"><span></span><span></span><span></span></div>
+      <div class="screen">
+        <div class="clock" id="clock">12:00</div>
+        <div class="dateband" id="date">SAT OCTOBER 3</div>
+        <div class="icons" id="icons" aria-hidden="true"></div>
+      </div>
+      <div class="phone-keys" aria-hidden="true"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <section id="features">
+    <p class="label">What's inside</p>
+    <h2>A handheld in your pocket.</h2>
+    <div class="grid3" style="margin-top:26px">
+      <div class="frame feature">
+        <span class="tag">Shelf</span>
+        <h3>Cartridge shelf</h3>
+        <p>Swipe left for game cartridges: Mines, Password Crack, a daily challenge, a hi-score board and more. Slot in what you play, eject the rest. Plus cartridges add Brick Game 5-in-1 and Pixel Pet.</p>
+      </div>
+      <div class="frame feature">
+        <span class="tag">Home</span>
+        <h3>Dot-matrix home</h3>
+        <p>A big clock, a date band and the eight apps you actually use, drawn as pixel icons. Everything else is one swipe up.</p>
+      </div>
+      <div class="frame feature">
+        <span class="tag">Keys</span>
+        <h3>A matching keyboard</h3>
+        <p>RetroPhone Keys: chunky keycaps and word suggestions that learn on your phone, and only on your phone.</p>
+      </div>
+      <div class="frame feature">
+        <span class="tag">Sound</span>
+        <h3>Its own voice</h3>
+        <p>Key clicks, a startup chime and a ringtone you'll recognise across the room. All original, synthesised on the phone.</p>
+      </div>
+      <div class="frame feature">
+        <span class="tag">Play</span>
+        <h3>Tiny games</h3>
+        <p>Double-tap home for the Playground: Snake, Pong, Mines, Reaction and more. Ten seconds each, plus a daily challenge.</p>
+      </div>
+      <div class="frame feature">
+        <span class="tag">Grow</span>
+        <h3>A phone that levels up</h3>
+        <p>Your device gets a model number, badges and unlocks: new sounds, boot screens and icon styles. Earn XP by playing and finding secrets.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="packs">
+    <div class="grid2">
+      <div>
+        <p class="label">Operating system packs</p>
+        <h2>Sixteen eras in your pocket.</h2>
+        <p>Each pack swaps the whole phone: icons, fonts, sounds, menus, the clock, the wallpaper, even the boot screen. Unlock your phone and it boots up, checks itself and says hello.</p>
+        <div class="eras">
+          <span>Phosphor 1982</span><span>Amber Term 1984</span><span>Communicator 87</span><span>Millennia 1999</span>
+          <span>Cyberphone 2003</span><span>Retro OS 2004</span><span>Keitai</span><span>Brick OS 2005</span>
+          <span>Gloss 2007</span><span>Root Shell 2009</span><span>Holo 2011</span><span>Arcade</span>
+          <span>Departures</span><span>Gov-Term</span><span>Neo 2045</span><span>Deep Space 2131</span>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Unlock sequence example">
+        RETRO OS 1.0<br><br>
+        CPU ............ OK<br>
+        MEMORY 640K .... OK<br>
+        LCD 2-TONE ..... OK<br><br>
+        WELCOME BACK.<span class="blink">_</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="modes">
+    <p class="label">Retro modes</p>
+    <h2>Go full brick phone.</h2>
+    <div class="grid3" style="margin-top:26px">
+      <div class="frame">
+        <h3>Dumb Mode</h3>
+        <p>PHONE · MESSAGES · MUSIC · MAP · CAMERA. That's it. The rest of your phone is still there, behind a swipe and a three-second hold.</p>
+      </div>
+      <div class="frame">
+        <h3>Coin-op social apps</h3>
+        <p>Social apps turn into arcade machines: <em>INSERT COIN</em>. A few coins a day, one per play. Out of credits, it's <em>GAME OVER</em>, unless you hold <em>CONTINUE?</em></p>
+      </div>
+      <div class="frame">
+        <h3>Era Simulator</h3>
+        <p>Live in 2004, 2009 or 2014 for a while, or try 2026: today, redrawn as a clean modern LCD.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="secrets">
+    <div class="grid2">
+      <div>
+        <p class="label">Classified</p>
+        <h2>It has secrets.</h2>
+        <p>Old phones had service codes. RetroPhone has more. Some show you things. Some change everything. We're not going to tell you which.</p>
+        <p class="dim">Hint: start in the app search. Then think about years.</p>
+      </div>
+      <div class="frame" style="text-align:center">
+        <p class="label">Enter code</p>
+        <p style="font-family:var(--text);font-size:56px;margin:6px 0">*#____#</p>
+        <p class="small dim">(Yes, this page knows a couple too.)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <p class="label">Pricing</p>
+    <h2>Free to play. Insert Plus for more.</h2>
+    <div class="grid3" style="margin-top:26px">
+      <div class="frame">
+        <h3>Free</h3>
+        <p class="price">$0</p>
+        <p class="dim small">Forever</p>
+        <ul class="ticks">
+          <li>Home, app list and notices</li>
+          <li>Retro OS pack and keyboard</li>
+          <li>The cartridge shelf and nine cartridges</li>
+          <li>Dumb Mode and coin-op social apps</li>
+          <li>Playground games and levels</li>
+          <li>Every secret code</li>
+        </ul>
+      </div>
+      <div class="frame best">
+        <span class="flag">Save 58%</span>
+        <h3>Plus · 1-year pass</h3>
+        <p class="price">$9.99</p>
+        <p class="dim small">per year · 7 days free for new subscribers</p>
+        <ul class="ticks">
+          <li>15 more operating system packs</li>
+          <li>Plus cartridges: Brick Game 5-in-1, Pixel Pet, Mixer</li>
+          <li>Era Simulator</li>
+          <li>Supports an indie developer</li>
+        </ul>
+      </div>
+      <div class="frame">
+        <h3>Plus · 1-month pass</h3>
+        <p class="price">$1.99</p>
+        <p class="dim small">per month · cancel any time</p>
+        <ul class="ticks">
+          <li>Everything in Plus</li>
+          <li>No commitment</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small dim" style="margin-top:18px">US prices shown. Google Play shows the price for your country. Subscriptions renew automatically until cancelled in Google Play; cancel before a free trial ends and you won't be charged.</p>
+  </section>
+
+  <section id="faq">
+    <p class="label">FAQ</p>
+    <h2>Questions</h2>
+    <details>
+      <summary>Does RetroPhone read my notifications or messages?</summary>
+      <p>Only if you allow notification access, and only to show them in the retro panel and control music. They stay on your phone. They are never uploaded, logged or analysed.</p>
+    </details>
+    <details>
+      <summary>Does the keyboard send what I type anywhere?</summary>
+      <p>No. Suggestions are learned on your phone and stored on your phone. The keyboard never sends anything over the internet, and nothing you type is ever collected.</p>
+    </details>
+    <details>
+      <summary>What data do you collect?</summary>
+      <p>Crash logs and play stats, tied to a random install ID, so we can fix bugs and see which packs and games get played. Never your apps, notifications, searches or what you type. You can switch it off in Settings → System → Privacy. Read the <a href="privacy.html">privacy policy</a>.</p>
+    </details>
+    <details>
+      <summary>Can I go back to my old launcher?</summary>
+      <p>Any time. Settings → System → Change home app, or pick another launcher in Android's settings. Uninstalling RetroPhone removes everything it stored on your phone. To delete anonymous statistics too, use the <a href="delete-data.html">data deletion form</a>.</p>
+    </details>
+    <details>
+      <summary>How do I cancel Plus?</summary>
+      <p>In Google Play: Profile → Payments &amp; subscriptions → Subscriptions → RetroPhone Plus. You keep Plus until the end of the period you paid for.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="delete-data.html">Delete my data</a>
+      <a href="mailto:lunarsprintapps@gmail.com">Contact</a>
+    </div>
+    <p class="small dim">© <span id="year">2026</span> RetroPhone by LunarSprint. All fictional devices are fictional.</p>
+  </div>
+</footer>
+
+<script>
+  // OS packs: the same palettes as the app.
+  const PACKS = {
+    lcd:   { bg: "#a3ac8b", ink: "#1f2619", dim: "#5f684f", shadow: "#7f886a", accent: "#4b5e8e", body: "#23281e", onBody: "#c9d1b0" },
+    brick: { bg: "#8fb8a2", ink: "#0f2a20", dim: "#3f6a58", shadow: "#6e9988", accent: "#1f4e79", body: "#1b2a24", onBody: "#b9d6c7" },
+    amber: { bg: "#15100a", ink: "#ffb347", dim: "#b07a35", shadow: "#4a3212", accent: "#ffd98a", body: "#2a2116", onBody: "#ffb347" },
+    neo:   { bg: "#14092a", ink: "#ff6ec7", dim: "#a865b8", shadow: "#2a1240", accent: "#4df3ff", body: "#2a1747", onBody: "#ff6ec7" },
+    space: { bg: "#02060b", ink: "#8ef5e3", dim: "#4a9c94", shadow: "#071a1d", accent: "#ff8a3d", body: "#0d1f24", onBody: "#8ef5e3" },
+    elite: { bg: "#050505", ink: "#00ffc8", dim: "#16a084", shadow: "#0a1f1a", accent: "#ff2e88", body: "#111", onBody: "#00ffc8" },
+    y2k:   { bg: "#0e7c7b", ink: "#f4f1e8", dim: "#a9dad6", shadow: "#07504f", accent: "#ffd447", body: "#c8c3b4", onBody: "#1b1b1b" },
+  };
+  function applyPack(id) {
+    const p = PACKS[id]; if (!p) return;
+    const r = document.documentElement.style;
+    r.setProperty("--bg", p.bg); r.setProperty("--ink", p.ink); r.setProperty("--dim", p.dim);
+    r.setProperty("--shadow", p.shadow); r.setProperty("--accent", p.accent);
+    r.setProperty("--body", p.body); r.setProperty("--on-body", p.onBody);
+    document.querySelector('meta[name="theme-color"]').content = p.bg;
+    document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(c.dataset.pack === id)));
+  }
+  document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => applyPack(c.dataset.pack)));
+
+  // Pixel icons: phone, messages, camera, calendar, map, music, games, settings (8x8).
+  const GLYPHS = [
+    ["11000000","11100000","01100000","00110000","00011000","00001110","00000111","00000011"],
+    ["11111111","10000001","10101011","10000001","11111111","00110000","01100000","00000000"],
+    ["00011000","11111111","10000001","10011001","10100101","10011001","10000001","11111111"],
+    ["01000010","11111111","10000001","10110101","10000001","10101101","10000001","11111111"],
+    ["00111100","01100110","01011010","01100110","00111100","00011000","00011000","00010000"],
+    ["00011111","00010001","00010001","00010001","01110001","11110111","01100111","00000110"],
+    ["00011000","00011000","11111111","11011011","11111111","01100110","01000010","00000000"],
+    ["01011010","11111111","01100110","11000011","11000011","01100110","11111111","01011010"],
+  ];
+  document.getElementById("icons").innerHTML = GLYPHS.map(rows => {
+    let r = "";
+    rows.forEach((row, y) => [...row].forEach((b, x) => { if (b === "1") r += `<rect x="${x}" y="${y}" width="1" height="1"/>`; }));
+    return `<svg viewBox="0 0 8 8" shape-rendering="crispEdges">${r}</svg>`;
+  }).join("");
+
+  // Live clock + date band.
+  const DAYS = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
+  const MONTHS = ["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"];
+  function tick() {
+    const d = new Date();
+    document.getElementById("clock").textContent = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+    document.getElementById("date").textContent = `${DAYS[d.getDay()]} ${MONTHS[d.getMonth()]} ${d.getDate()}`;
+  }
+  tick(); setInterval(tick, 10000);
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // A couple of codes work here too. Type them anywhere on the page.
+  let typed = "";
+  document.addEventListener("keydown", e => {
+    if (e.target.closest("input, textarea")) return;
+    typed = (typed + e.key).slice(-10);
+    if (typed.endsWith("*#1337#")) applyPack("elite");
+    if (typed.endsWith("*#1999#")) applyPack("y2k");
+    if (typed.endsWith("*#0#")) applyPack("lcd");
+  });
+</script>
+</body>
+</html>
