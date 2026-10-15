@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delete My Data — RetroPhone</title>
+  <meta name="description" content="Request deletion of data collected by the RetroPhone launcher.">
+  <meta name="theme-color" content="#a3ac8b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="./">
+    <svg class="brand-mark" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect width="8" height="8" fill="var(--ink)"/><path fill="var(--bg)" d="M2 1h4v1H2zM2 2h1v1H2zM5 2h1v1H5zM2 3h4v1H2zM2 5h1v1H2zM4 5h1v1H4zM2 6h4v1H2z"/></svg>
+    RetroPhone
+  </a>
+  <nav aria-label="Main">
+    <a href="./">Home</a>
+    <a href="privacy.html">Privacy policy</a>
+  </nav>
+</header>
+
+<main class="wrap doc">
+  <p class="label">RetroPhone · com.retrophone.launcher</p>
+  <h1>Delete my data</h1>
+  <p>RetroPhone keeps almost everything on your phone. This page explains how to delete it, and lets you ask us to delete the little we collect. You don't need to have the app installed to make a request.</p>
+
+  <h2>1. Data on your phone</h2>
+  <p>Your settings, pinned apps, keyboard suggestions, game scores, level and badges are stored only on your device. To delete them:</p>
+  <ul>
+    <li>Android <strong>Settings → Apps → RetroPhone → Storage → Clear storage</strong>, or</li>
+    <li>uninstall RetroPhone.</li>
+  </ul>
+  <p>We can't see or delete this data for you, because it never reaches us.</p>
+
+  <h2>2. Data we collect</h2>
+  <p>Crash logs and play stats (Firebase Crashlytics and Analytics), linked to a random ID for your installation, not to your name or Google account. Without the ID we have no way to find your data, so please include it:</p>
+  <ol>
+    <li>Open RetroPhone and swipe right to <strong>Settings</strong>.</li>
+    <li>Open the <strong>System</strong> tab and scroll to <strong>Privacy</strong>.</li>
+    <li>Tap <strong>Copy ID (for data deletion)</strong> and paste it below.</li>
+  </ol>
+  <p class="dim">Already uninstalled? Send the request anyway. Play stats are deleted automatically after 2 months and crash logs after 90 days, and we'll delete any emails we hold from you.</p>
+
+  <h2>3. Request deletion</h2>
+  <div class="frame">
+    <form id="deletion" novalidate>
+      <label>
+        <span>Your email (so we can confirm)</span>
+        <input type="email" name="email" id="email" required autocomplete="email" placeholder="you@example.com">
+      </label>
+      <label>
+        <span>Analytics ID (from Settings → System → Privacy)</span>
+        <input type="text" name="analytics_id" id="analytics_id" autocomplete="off" spellcheck="false" placeholder="e.g. 3f9c2b7a51d04e8f9a1c6b2d7e0f4a13">
+      </label>
+      <fieldset>
+        <legend>What should we delete?</legend>
+        <label class="check"><input type="checkbox" name="scope" value="Analytics and crash data" checked> <span class="small">Crash logs and play stats for this installation</span></label>
+        <label class="check"><input type="checkbox" name="scope" value="Support emails"> <span class="small">Emails and support conversations with us</span></label>
+      </fieldset>
+      <label>
+        <span>Anything else? (optional)</span>
+        <textarea name="message" id="message" placeholder="Tell us anything that helps."></textarea>
+      </label>
+      <input class="hp" type="text" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check">
+        <input type="checkbox" id="confirm" required>
+        <span class="small">I understand deleted data can't be recovered, and that subscriptions are managed separately in Google Play.</span>
+      </label>
+      <div class="cta" style="margin:0">
+        <button class="btn primary" type="submit">Send deletion request</button>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <p class="small dim" style="margin-top:12px">We confirm by email and delete within 30 days. We use your email only to answer this request, and delete it afterwards.</p>
+
+  <h2>4. Subscriptions and payments</h2>
+  <p>Payments for RetroPhone Plus are handled by Google Play. We never receive your payment details. To cancel, open Google Play → <strong>Profile → Payments &amp; subscriptions → Subscriptions</strong>. Google keeps purchase records under its own <a href="https://policies.google.com/privacy">privacy policy</a>; you can manage them in your <a href="https://myaccount.google.com/">Google Account</a>.</p>
+
+  <h2>5. Questions</h2>
+  <p>Email <a href="mailto:lunarsprintapps@gmail.com">lunarsprintapps@gmail.com</a> or read the <a href="privacy.html">privacy policy</a>.</p>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>
+      <a href="./">Home</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="mailto:lunarsprintapps@gmail.com">Contact</a>
+    </div>
+    <p class="small dim">© 2026 RetroPhone by LunarSprint</p>
+  </div>
+</footer>
+
+<script>
+  // Where requests go. With FORM_ENDPOINT empty, the visitor's email app opens with the request
+  // filled in. To receive requests without email, set FORM_ENDPOINT to a form-backend URL that
+  // accepts JSON POSTs (e.g. a Formspree form or your own endpoint).
+  const CONTACT_EMAIL = "lunarsprintapps@gmail.com";
+  const FORM_ENDPOINT = "";
+
+  const form = document.getElementById("deletion");
+  const status = document.getElementById("status");
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    if (document.getElementById("website").value) return; // bots fill hidden fields
+    const email = document.getElementById("email").value.trim();
+    const id = document.getElementById("analytics_id").value.trim();
+    const scope = [...form.querySelectorAll('input[name="scope"]:checked')].map(c => c.value);
+    const message = document.getElementById("message").value.trim();
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = "Please enter a valid email."; return; }
+    if (!scope.length) { status.textContent = "Pick at least one thing to delete."; return; }
+    if (!document.getElementById("confirm").checked) { status.textContent = "Please tick the confirmation box."; return; }
+
+    const request = {
+      app: "RetroPhone (com.retrophone.launcher)",
+      email, analytics_id: id || "(not provided)", delete: scope, message,
+      submitted: new Date().toISOString(),
+    };
+
+    if (FORM_ENDPOINT) {
+      status.textContent = "Sending...";
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(request),
+        });
+        if (!res.ok) throw new Error(res.status);
+        form.reset();
+        status.textContent = "Request received. We'll confirm by email within 30 days.";
+      } catch {
+        status.textContent = "Couldn't send. Please email " + CONTACT_EMAIL + " instead.";
+      }
+      return;
+    }
+
+    const body = [
+      "Please delete my RetroPhone data.",
+      "",
+      "Email: " + email,
+      "Analytics ID: " + request.analytics_id,
+      "Delete: " + scope.join(", "),
+      message ? "Message: " + message : "",
+    ].filter(Boolean).join("\n");
+    location.href = "mailto:" + CONTACT_EMAIL +
+      "?subject=" + encodeURIComponent("RetroPhone data deletion request") +
+      "&body=" + encodeURIComponent(body);
+    status.textContent = "Your email app should open with the request filled in. Press send to finish.";
+  });
+</script>
+</body>
+</html>
